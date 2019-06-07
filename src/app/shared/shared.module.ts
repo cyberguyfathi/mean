@@ -21,6 +21,8 @@ import {
   MatProgressBarModule,
   MatFormFieldModule,
   MatSelectModule,
+  MatCheckbox,
+  MatCheckboxModule,
 } from '@angular/material';
 
 @NgModule({
@@ -39,6 +41,7 @@ import {
     MatInputModule,
     MatSnackBarModule,
     FormsModule,
+    MatCheckboxModule,
     ReactiveFormsModule,
     MatSidenavModule,
     MatTreeModule,
@@ -67,6 +70,7 @@ import {
     MatProgressBarModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatCheckbox,
     FlexLayoutModule,
   ],
   declarations: [],

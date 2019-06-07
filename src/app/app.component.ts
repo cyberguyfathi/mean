@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { MatIconRegistry } from "@angular/material";
+import {MatIconRegistry, MatSnackBar} from '@angular/material';
 import { DomSanitizer } from "@angular/platform-browser";
 
 
@@ -22,7 +22,8 @@ export class AppComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private domSanitizer: DomSanitizer,
-    private matIconRegistry: MatIconRegistry
+    private matIconRegistry: MatIconRegistry,
+    private snackBar: MatSnackBar
   ) {
     this.registerSvgIcons()
   }
@@ -38,6 +39,11 @@ export class AppComponent implements OnInit {
     this.userSubscription = this.authService.$userSource.subscribe((user) => {
       this.user = user;
     });
+
+    (<any>window).globalEvents.on('open error dialog', (text) => this.snackBar.open(
+      text,
+      'OK',
+      {panelClass: 'warn-color', duration: 2000}));
   }
 
   logout(): void {

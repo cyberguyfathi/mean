@@ -1,6 +1,7 @@
 <header>
   <mat-toolbar color="primary">
     <a [routerLink]="['/']" class="logo"></a>
+    <a mat-button class="links side" *ngIf="user && user.isAdmin" [routerLink]="['/users']">Users</a>
     <span class="example-spacer"></span>
     <a class="links side" [routerLink]="['/auth/login']" *ngIf="!user">Login</a>
     <div>

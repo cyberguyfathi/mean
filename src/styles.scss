@@ -3,17 +3,18 @@
 @import '~angular-tree-component/dist/angular-tree-component.css';
 @import '~@angular/material/theming';
 @import '~dragula/dist/dragula.css';
+//
+//$custom-typography: mat-typography-config(
+//    $font-family: 'Exo'
+//);
 
-$custom-typography: mat-typography-config(
-    $font-family: 'Exo'
-);
-
-@include mat-core($custom-typography);
+//@include mat-core($custom-typography);
 
 body {
   background-color: #f4f3f3;
   margin: 0;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
   app-root * {
-    font-family: 'Exo', sans-serif;
+
   }
 }
