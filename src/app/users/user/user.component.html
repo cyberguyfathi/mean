@@ -1,0 +1,22 @@
+<form class="example-container" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <mat-form-field hideRequiredMarker="true">
+    <input matInput required  placeholder="Full Name" formControlName="fullname">
+  </mat-form-field>
+  <mat-form-field hideRequiredMarker="true">
+    <input matInput required  type="email" placeholder="Email" formControlName="email">
+  </mat-form-field>
+  <mat-form-field hideRequiredMarker="true">
+    <input type="password" required  matInput placeholder="Password" formControlName="password">
+  </mat-form-field>
+  <mat-form-field hideRequiredMarker="true">
+    <input matInput type="password" required  matInput placeholder="Repeat password" formControlName="repeatPassword">
+    <mat-error *ngIf="form.get('repeatPassword').invalid && form.get('repeatPassword').errors.passwordMatch">Password mismatch</mat-error>
+  </mat-form-field>
+  <mat-checkbox formControlName="isUsersAdmin">
+    Users Admin
+  </mat-checkbox>
+  <mat-checkbox formControlName="isAnalyst">
+    Analyst
+  </mat-checkbox>
+  <button type="submit" mat-raised-button color="accent" [disabled]="form.invalid || isSaving">Save</button>
+</form>

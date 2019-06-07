@@ -1,0 +1,31 @@
+
+<button mat-raised-button color="primary"  (click)="createUser()">Create User</button>
+
+<!--<mat-accordion class="example-headers-align">-->
+  <!--<mat-expansion-panel *ngFor='let user of users | async' hideToggle>-->
+    <!--<mat-expansion-panel-header>-->
+      <!--<mat-panel-title>-->
+        <!--{{user.fullname}}-->
+      <!--</mat-panel-title>-->
+      <!--<mat-panel-description>-->
+        <!--{{user.email}}-->
+      <!--</mat-panel-description>-->
+      <!--&lt;!&ndash;<mat-panel-description>&ndash;&gt;-->
+        <!--&lt;!&ndash;{{user.roles}}&ndash;&gt;-->
+        <!--&lt;!&ndash;<mat-icon>account_circle</mat-icon>&ndash;&gt;-->
+      <!--&lt;!&ndash;</mat-panel-description>&ndash;&gt;-->
+    <!--</mat-expansion-panel-header>-->
+    <!--<p>Hello</p>-->
+  <!--</mat-expansion-panel>-->
+<!--</mat-accordion>-->
+
+<mat-list>
+    <mat-list-item  *ngFor='let user of users | async' class="example-headers-align">
+      <div class="example-headers-align-title">{{user.fullname}}</div>
+      <div class="example-headers-align-description">{{user.email}}</div>
+      <div class="example-headers-align-description">{{user.roles}}</div>
+      <mat-icon>edit</mat-icon>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+
+</mat-list>

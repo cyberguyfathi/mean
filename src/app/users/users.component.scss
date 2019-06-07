@@ -1,0 +1,15 @@
+.example-headers-align .example-headers-align-title,
+.example-headers-align .example-headers-align-description {
+  flex-basis: 0;
+  display: flex;
+  flex-grow: 1;
+  margin-right: 16px;
+}
+
+.example-headers-align .example-headers-align-description {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  margin-right: 16px;
+}
